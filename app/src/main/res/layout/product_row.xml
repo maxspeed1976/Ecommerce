@@ -2,26 +2,28 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:paddingTop="16dp">
 
     <ImageView
-        android:id="@+id/photo"
+        android:id="@+id/image"
+        android:padding="16dp"
         app:layout_constraintDimensionRatio="1:1"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-
-        android:layout_width="350dp"
-        android:layout_height="350dp"/>
+        android:layout_width="0dp"
+        android:layout_height="0dp"/>
     <TextView
         android:id="@+id/title"
         android:layout_width="0dp"
+        android:layout_height="wrap_content"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        android:layout_height="wrap_content"
         android:textAlignment="center"
         android:text="Organic Apple Sauce"
-        app:layout_constraintTop_toBottomOf="@+id/photo"/>
+        android:textSize="16sp"
+        app:layout_constraintTop_toBottomOf="@+id/image"/>
 
 
 

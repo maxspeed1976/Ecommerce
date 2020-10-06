@@ -1,5 +1,8 @@
 package com.example.ecommerce
 
+import android.content.Context
+import android.icu.number.NumberFormatter.with
+import android.icu.number.NumberRangeFormatter.with
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -26,11 +29,16 @@ class ProductsAdapter (private val products: ArrayList<Product>): RecyclerView.A
         holder.title.text = products[position].title
         Picasso.get().load(products[position].photoUrl).into(holder.image)
 
+
+
     }
 
     class ViewHolder (itemView: View) : RecyclerView.ViewHolder(itemView){
-        val image: ImageView = itemView.findViewById(R.id.photo)
-        val title: TextView = itemView.findViewById(R.id.title)
+        val image: ImageView = itemView.image
+        val title = itemView.title
+
+
+
 
     }
 
