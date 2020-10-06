@@ -3,6 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:paddingTop="16dp">
 
     <ImageView
@@ -16,14 +17,31 @@
         android:layout_height="0dp"/>
     <TextView
         android:id="@+id/title"
+        android:paddingTop="10dp"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         android:textAlignment="center"
         android:text="Organic Apple Sauce"
+        android:textColor="#000000"
         android:textSize="16sp"
         app:layout_constraintTop_toBottomOf="@+id/image"/>
+    <TextView
+        android:paddingTop="10dp"
+        app:layout_constraintTop_toBottomOf="@+id/title"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:textColor="#000000"
+        tools:text="$5.99"
+        android:id="@+id/price"
+        android:gravity="center"
+        android:textAlignment="center"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+
+        />
+
 
 
 

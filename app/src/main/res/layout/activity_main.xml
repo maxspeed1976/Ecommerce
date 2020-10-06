@@ -17,5 +17,17 @@
       app:layout_constraintTop_toTopOf="parent"
       app:layout_constraintBottom_toBottomOf="parent"
       />
+  <com.google.android.material.floatingactionbutton.FloatingActionButton
+      android:id="@+id/fab"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_gravity="end|bottom"
+      android:src="@drawable/ic_baseline_search_24"
+      android:contentDescription="Search"
+      android:layout_margin="16dp"
+      app:layout_constraintBottom_toBottomOf="parent"
+      app:layout_constraintRight_toRightOf="parent"
+      android:tint="#FFFFFF"
+      />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
