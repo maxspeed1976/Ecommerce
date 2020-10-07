@@ -25,9 +25,9 @@ class ProductsAdapter (private val products: ArrayList<Product>): RecyclerView.A
         view.setOnClickListener{
             val intent = Intent(parent.context, ProductDetails:: class.java )
             val holder = ViewHolder(view)
-          //  Log.d("OLEG",products[holder.adapterPosition].title)
+          //  Log.d("OLEG",products[holder.absoluteadapterPosition].title)
 
-            intent.putExtra("title","Oleg")
+            intent.putExtra("title",products[holder.adapterPosition+1].price)
 
 
             parent.context.startActivity(intent)
@@ -53,8 +53,8 @@ class ProductsAdapter (private val products: ArrayList<Product>): RecyclerView.A
 
     class ViewHolder (itemView: View) : RecyclerView.ViewHolder(itemView){
         val image: ImageView = itemView.image
-        val title = itemView.title
-        val price = itemView.price
+        val title: TextView = itemView.title
+        val price: TextView = itemView.price
 
 
 
