@@ -20,26 +20,31 @@ import java.util.ArrayList
 class ProductsAdapter (private val products: ArrayList<Product>): RecyclerView.Adapter<ProductsAdapter.ViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-        val view = LayoutInflater.from (parent.context).inflate(R.layout.product_row,parent,false)
-
+        val view =
+            LayoutInflater.from (parent.context).inflate(R.layout.product_row,parent,false)
+        val holder = ViewHolder(view)
         view.setOnClickListener{
             val intent = Intent(parent.context, ProductDetails:: class.java )
-            val holder = ViewHolder(view)
-          //  Log.d("OLEG",products[holder.absoluteadapterPosition].title)
 
-            intent.putExtra("title",products[holder.adapterPosition+1].price)
-
-
+            intent.putExtra("title",products[holder.adapterPosition].title)
             parent.context.startActivity(intent)
-
         }
 
-        return ViewHolder(view)
+        return holder
     }
 
 
     override fun getItemCount(): Int = products.size
+    class ViewHolder (itemView: View) : RecyclerView.ViewHolder(itemView){
+        val image: ImageView = itemView.image
+        val title: TextView = itemView.title
+        val price: TextView = itemView.price
 
+
+
+
+
+    }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         holder.title.text = products[position].title
@@ -51,16 +56,7 @@ class ProductsAdapter (private val products: ArrayList<Product>): RecyclerView.A
 
     }
 
-    class ViewHolder (itemView: View) : RecyclerView.ViewHolder(itemView){
-        val image: ImageView = itemView.image
-        val title: TextView = itemView.title
-        val price: TextView = itemView.price
 
-
-
-
-
-    }
 
 
 }
